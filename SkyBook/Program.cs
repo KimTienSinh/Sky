@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SkyBook.Data;
+using SkyBook.Reponsitories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,13 @@ builder.Services.AddDbContext<BookStoreContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("BookStore"));
 });
+
+//// register AutoMapper
+builder.Services.AddAutoMapper(typeof(Program));
+
+
+//// Life cycle DI: AddSingleton(), AdddTransient(), AddScope()
+builder.Services.AddScoped<IBookRepository, BookRepository>();
 
 var app = builder.Build();
 
