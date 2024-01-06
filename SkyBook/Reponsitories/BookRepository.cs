@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SkyBook.Data;
 using SkyBook.Models;
@@ -49,11 +50,11 @@ namespace SkyBook.Reponsitories
 
         public async Task UpdateBookAsync(int id, BookModel model)
         {
-            var exsitingBook = await _context.Books!.FindAsync(id);
+            /*var exsitingBook = await _context.Books!.FindAsync(id);
             if(exsitingBook != null)
             {
                 //1
-                /*exsitingBook.Title = model.Title;
+                *//*exsitingBook.Title = model.Title;
                 exsitingBook.Description = model.Description;
                 exsitingBook.Price = model.Price;
                 exsitingBook.Quantity = model.Quantity;
@@ -63,23 +64,33 @@ namespace SkyBook.Reponsitories
                 _context.Books!.Update(updateBook);*//*
 
                 _context.Entry(exsitingBook).State = EntityState.Modified;
-                await _context.SaveChangesAsync();*/
+                await _context.SaveChangesAsync();*//*
 
                 //2
-               /* _context.Entry(exsitingBook).State = EntityState.Detached; // Detach the existing entity
+               *//* _context.Entry(exsitingBook).State = EntityState.Detached; // Detach the existing entity
 
                 var updatedBook = _mapper.Map<Book>(model);
                 updatedBook.Id = id; // Ensure the Id is set correctly
 
                 _context.Books!.Update(updatedBook);
-                await _context.SaveChangesAsync();*/
+                await _context.SaveChangesAsync();*//*
 
                 //3
-                _mapper.Map(model, exsitingBook); // Update only the changed properties
+                *//*_mapper.Map(model, exsitingBook); // Update only the changed properties
 
                 _context.Books!.Update(exsitingBook);
+                await _context.SaveChangesAsync();*//*
+
+
+            }*/
+
+            if (id == model.Id)
+            {
+                var updateBook = _mapper.Map<Book>(model);
+                _context.Books!.Update(updateBook);
                 await _context.SaveChangesAsync();
             }
+
         }
     }
 }

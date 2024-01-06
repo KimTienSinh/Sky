@@ -249,3 +249,9 @@ C:\Users\ADMIN\source\repos\SkyBook\SkyBook\bin\Debug\net6.0\runtimes\win\lib\ne
 C:\Users\ADMIN\source\repos\SkyBook\SkyBook\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\ADMIN\source\repos\SkyBook\SkyBook\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\ADMIN\source\repos\SkyBook\SkyBook\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\ADMIN\source\repos\SkyBook\SkyBook\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\ADMIN\source\repos\SkyBook\SkyBook\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\ADMIN\source\repos\SkyBook\SkyBook\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\ADMIN\source\repos\SkyBook\SkyBook\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\ADMIN\source\repos\SkyBook\SkyBook\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\ADMIN\source\repos\SkyBook\SkyBook\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll

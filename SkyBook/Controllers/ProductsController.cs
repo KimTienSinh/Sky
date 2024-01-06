@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SkyBook.Models;
 using SkyBook.Reponsitories;
@@ -37,6 +38,7 @@ namespace SkyBook.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> AddNewBook(BookModel model)
         { 
             try
@@ -52,10 +54,10 @@ namespace SkyBook.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize]
         public async Task<IActionResult> UpdateBook(int id, BookModel model)
         {
-            var existingBook = await _bookRepo.getBookAsync(id);
-            if (existingBook == null)
+            if (id != model.Id)
             {
                 return NotFound();
             }
@@ -64,6 +66,7 @@ namespace SkyBook.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize]
         public async Task<IActionResult> DeleteBook(int id)
         {
             var existingBook = await _bookRepo.getBookAsync(id);
