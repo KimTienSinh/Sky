@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SkyBook.Helpers;
 using SkyBook.Models;
 using SkyBook.Reponsitories;
 
@@ -18,6 +19,7 @@ namespace SkyBook.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = AppRole.Customer)]
         public async Task<IActionResult> GetAllBooks()
         {
             try
