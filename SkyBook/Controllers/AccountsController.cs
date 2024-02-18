@@ -25,7 +25,17 @@ namespace SkyBook.Controllers
                 return Ok(result.Succeeded);
             }
             return StatusCode(500);
-        } 
+        }
+        [HttpPost("SignUpManager")]
+        public async Task<IActionResult> SignUpManager(SignUpModel signUpmodel)
+        {
+            var result = await _acccountRepo.SignUpManagerAsync(signUpmodel);
+            if (result.Succeeded)
+            {
+                return Ok(result.Succeeded);
+            }
+            return StatusCode(500);
+        }
 
         [HttpPost("SignIn")]
         public async Task<IActionResult> SignIn(SignInModel signInModel)

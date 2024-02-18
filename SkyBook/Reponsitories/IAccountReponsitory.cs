@@ -7,5 +7,8 @@ namespace SkyBook.Reponsitories
     {
         public Task<IdentityResult> SignUpAsync(SignUpModel model);
         public Task<string> SignInAsync(SignInModel model);
+
+        public Task<IdentityResult> SignUpManagerAsync(SignUpModel model);
+
     }
 }

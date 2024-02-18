@@ -84,5 +84,30 @@ namespace SkyBook.Reponsitories
             }
             return result;
         }
+
+        public async Task<IdentityResult> SignUpManagerAsync(SignUpModel model)
+        {
+            var user = new ApplicationUser
+            {
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                Email = model.Email,
+                UserName = model.Email
+            };
+
+            var result = await userManager.CreateAsync(user, model.Password);
+
+            if (result.Succeeded)
+            {
+                //kiểm tra role Customer đã có
+                if (!await roleManager.RoleExistsAsync(AppRole.Manager))
+                {
+                    await roleManager.CreateAsync(new IdentityRole(AppRole.Manager));
+                }
+
+                await userManager.AddToRoleAsync(user, AppRole.Manager);
+            }
+            return result;
+        }
     }
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SkyBook")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea1bcf34d71304a513dedfba66b7c10fea865bde")]
 [assembly: System.Reflection.AssemblyProductAttribute("SkyBook")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SkyBook")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

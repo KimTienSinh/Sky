@@ -33,6 +33,7 @@ namespace SkyBook.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize(Roles = AppRole.Manager)]
         public async Task<IActionResult> GetBookId(int id)
         {
             var book = await _bookRepo.getBookAsync(id);
